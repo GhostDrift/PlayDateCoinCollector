@@ -20,6 +20,10 @@ local function resetTimer()
 	playTimer = playdate.timer.new(playTime,playTime,0,playdate.easingFunctions.linear)
 end
 
+local function initializeTimer()
+	playTimer = playdate.timer.new(0,playTime,0,playdate.easingFunctions.linear)
+end
+
 local function moveCoin()
 	local randX = math.random(40,360)
 	local randY = math.random(40,200)
@@ -51,7 +55,8 @@ local function initialize()
 			gfx.clearClipRect()
 		end
 	)
-	resetTimer()
+	-- resetTimer()
+	initializeTimer()
 end
 
 initialize()
